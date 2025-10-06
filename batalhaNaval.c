@@ -10,6 +10,83 @@ int main() {
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
+   // Letras das colunas (A até J)
+    char coluna[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+
+    // Criação do tabuleiro 10x10 (todas as posições começam em 0)
+    int tabuleiro[10][10] = {0};
+
+    // ----------------------------
+    // 1 Etapa: mostrar o tabuleiro vazio (sem navios)
+    // ----------------------------
+
+    printf("=== TABULEIRO INICIAL ===\n\n");
+
+    // Cabeçalho com as letras das colunas
+    printf("    "); // espaço para alinhar com os números da primeira coluna
+    for (int c = 0; c < 10; c++) {
+        printf("%c  ", coluna[c]);
+    }
+    printf("\n");
+
+    // Corpo do tabuleiro (linhas numeradas)
+    for (int i = 0; i < 10; i++) {
+        printf("%2d  ", i + 1); // imprime o número da linha (1–10)
+        for (int j = 0; j < 10; j++) {
+            printf("0  "); // símbolo do mar (posição vazia)
+        }
+        printf("\n");
+    }
+
+    // ----------------------------
+    // 2 Etapa: posicionar navios
+    // ----------------------------
+
+    // Navio horizontal (linha 2, colunas B a D)
+    tabuleiro[1][1] = 3;
+    tabuleiro[1][2] = 3;
+    tabuleiro[1][3] = 3;
+
+    // Navio vertical (coluna F, linhas 4 a 6)
+    tabuleiro[3][5] = 3;
+    tabuleiro[4][5] = 3;
+    tabuleiro[5][5] = 3;
+
+    // ----------------------------
+    // 3 Etapa: mostrar o tabuleiro com os navios
+    // ----------------------------
+
+    printf("\n=== TABULEIRO COM OS NAVIOS ===\n\n");
+
+    // Cabeçalho novamente
+    printf("    ");
+    for (int c = 0; c < 10; c++) {
+        printf("%c  ", coluna[c]);
+    }
+    printf("\n");
+
+    // Agora percorre a matriz e mostra onde há navios
+    for (int i = 0; i < 10; i++) {
+        printf("%2d  ", i + 1);
+        for (int j = 0; j < 10; j++) {
+            if (tabuleiro[i][j] == 3) {
+                printf("3  "); // navio
+            } else {
+                printf("0  "); // mar
+            }
+        }
+        printf("\n");
+    }
+
+
+
+
+
+
+
+
+
+
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
     // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
