@@ -52,6 +52,16 @@ int main() {
     tabuleiro[4][5] = 3;
     tabuleiro[5][5] = 3;
 
+    // Navio diagonal - cima/baixo - esquerda/direita (coluna A a C, linhas 3 a 5)
+    tabuleiro[2][0] = 3;
+    tabuleiro[3][1] = 3;
+    tabuleiro[4][2] = 3;
+
+    // Navio diagonal - baixo/cima - direita/esquerda (coluna G a I, linhas 9 a 7)
+    tabuleiro[9][6] = 3;
+    tabuleiro[8][7] = 3;
+    tabuleiro[7][8] = 3;
+
     // ----------------------------
     // 3 Etapa: mostrar o tabuleiro com os navios
     // ----------------------------
@@ -77,14 +87,6 @@ int main() {
         }
         printf("\n");
     }
-
-
-
-
-
-
-
-
 
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
